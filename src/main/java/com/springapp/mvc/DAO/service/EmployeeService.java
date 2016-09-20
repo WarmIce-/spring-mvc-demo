@@ -11,4 +11,6 @@ public interface EmployeeService {
     public List<Employee> getItems();
 
     public void insert(Employee item);
+
+    Employee getEmployeeById(int empId);
 }
