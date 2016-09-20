@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Ishwor on 9/20/2016.
  */
-public class EmployeeServiceImpl implements EmployeeService, RowMapper<Employee> {
+public class EmployeeServiceImpl implements EmployeeService{
 
     private DataSource dataSource;
 
@@ -30,13 +30,5 @@ public class EmployeeServiceImpl implements EmployeeService, RowMapper<Employee>
 
     }
 
-    @Override
-    public Employee mapRow(ResultSet resultSet, int i) {
-        try {
 
-        } catch (Exception e) {
-
-        }
-        return null;
-    }
 }
