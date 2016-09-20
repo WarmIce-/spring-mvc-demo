@@ -5,6 +5,8 @@ import com.springapp.mvc.Models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -30,6 +32,25 @@ public class EmployeeController {
         model.addObject("itemList", empList);
         model.addObject("msg", "welcome to spring mvc");
         logger.info("check value from database:" + empList.get(0).getItemName());
+        return model;
+    }
+
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    public ModelAndView insert(@RequestParam(value = "name") String name, @RequestParam(value = "price") String price) {
+        Employee item = new Employee();
+        item.setItemName(name);
+        item.setItemPrice(Double.valueOf(price));
+
+        employeeServiceImpl.insert(item);
+
+        ModelAndView modelAndView = new ModelAndView("hello");
+        modelAndView.addObject("Database_Message", "Data insertion success!! Open you database and confirm!!");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public ModelAndView addPage() {
+        ModelAndView model = new ModelAndView("addpage");
         return model;
     }
 }

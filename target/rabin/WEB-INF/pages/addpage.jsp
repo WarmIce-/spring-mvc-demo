@@ -11,11 +11,11 @@
     <title>AddPage</title>
 </head>
 <body>
-<a href="/welcome.html">Back to item List</a>
+<a href="/list">Back to item List</a>
 
 <h2>Add New Items</h2>
 
-<form action="welcome/addpage.html" method="post">
+<form action="/insert" method="get">
     <table>
         <tr>
             <td>ItemName:</td>

@@ -28,16 +28,15 @@ public class EmployeeServiceImpl extends JdbcTemplate implements EmployeeService
 
     @Override
     public void insert(Employee item) {
-        String sql = "INSERT INTO Employee values(?,?,?)";
-        Long id = item.getItemId();
+        String sql = "INSERT INTO `Employee`(`itemPrice`,`itemName`) VALUES(?,?)";
         String name = item.getItemName();
         Double price = item.getItemPrice();
 
         // define query arguments
-        Object[] args = {id, name, price};
+        Object[] args = {price, name};
 
         // define SQL types of the arguments
-        int[] types = new int[]{Types.BIGINT, Types.VARCHAR, Types.DOUBLE};
+        int[] types = new int[]{Types.DOUBLE,Types.VARCHAR};
 
         // execute insert query to insert the data
         // return number of row / rows processed by the executed query

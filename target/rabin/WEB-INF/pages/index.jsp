@@ -6,23 +6,25 @@
     <p>${msg}</p>
 </head>
 <body>
-<a href="pages/addpage.jsp">Add New Item</a>
+<a href="/index">Add New Item</a>
 <h2>List of Items</h2>
 <table>
-    <thead>
+    <thead style="background: #f9ffb5">
     <tr>
-        <td>ID</td>
-        <td>Item</td>
-        <td>Amount</td>
+        <td style="width: 200px;text-align: center">ID</td>
+        <td style="width: 200px;text-align: center">Item</td>
+        <td style="width: 200px;text-align: center">Amount</td>
     </tr>
     </thead>
+    <tbody>
     <c:forEach items="${itemList}" varStatus="i">
-    <tr class="tr1">
-        <td>${itemList[i.index].itemId}</td>
-        <td>${itemList[i.index].itemName}</td>
-        <td>${itemList[i.index].itemPrice}</td>
-    </tr>
+        <tr class="tr1">
+            <td style="width: 200px;text-align: center">${itemList[i.index].itemId}</td>
+            <td style="width: 200px;text-align: center">${itemList[i.index].itemName}</td>
+            <td style="width: 200px;text-align: center">${itemList[i.index].itemPrice}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
 </table>
-</c:forEach>
 </body>
 </html>
