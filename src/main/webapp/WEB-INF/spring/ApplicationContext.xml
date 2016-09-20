@@ -9,9 +9,8 @@
        ">
 
 
-    <!--  <bean id="mmsPrefixRepository" name="mmsPrefixRepository" class="com.ecm.repositories.Admn.MmsPrefixRepository">
-          <constructor-arg ref="ecmDataSource"/>
-          <constructor-arg ref="transactionManager"/>
-      </bean>-->
+    <bean id="employeeServiceImpl" class="com.springapp.mvc.DAO.serviceImpl.EmployeeServiceImpl">
+        <constructor-arg ref="dataSource"/>
+    </bean>
 
 </beans>
