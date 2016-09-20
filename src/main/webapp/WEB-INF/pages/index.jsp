@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,25 +6,23 @@
     <p>${msg}</p>
 </head>
 <body>
-<a href="welcome/addpage.html">Add New Item</a>
+<a href="pages/addpage.jsp">Add New Item</a>
 <h2>List of Items</h2>
-<c:foreach var="item" items="${itemList}"></c:foreach>
-<thead>
-<tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>price</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>
-        ${item.itemId}
-    </td>
-    <td>${item.itemName}</td>
-    <td>${item.itemprice}</td>
-</tr>
-</tbody>
-
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Item</td>
+        <td>Amount</td>
+    </tr>
+    </thead>
+    <c:forEach items="${itemList}" varStatus="i">
+    <tr class="tr1">
+        <td>${itemList[i.index].itemId}</td>
+        <td>${itemList[i.index].itemName}</td>
+        <td>${itemList[i.index].itemPrice}</td>
+    </tr>
+</table>
+</c:forEach>
 </body>
 </html>

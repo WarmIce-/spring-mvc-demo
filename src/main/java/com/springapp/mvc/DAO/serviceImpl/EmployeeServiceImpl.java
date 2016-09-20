@@ -1,14 +1,10 @@
 package com.springapp.mvc.DAO.serviceImpl;
 
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.springapp.mvc.DAO.service.EmployeeService;
 import com.springapp.mvc.Models.Employee;
 import com.springapp.mvc.RowMapper.EmployeeRowMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
-import javax.sql.DataSource;
 import java.sql.Types;
 import java.util.List;
 
@@ -17,13 +13,8 @@ import java.util.List;
  */
 public class EmployeeServiceImpl extends JdbcTemplate implements EmployeeService {
 
-
-    @Autowired
-    private DataSource dataSource;
-
-
     private JdbcTemplate getJdbcTemplate() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(getDataSource());
         return jdbcTemplate;
     }
 

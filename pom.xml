@@ -57,6 +57,13 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <!-- my sql connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+        </dependency>
+
         <!--  c3po data source for connection pooling -->
         <dependency>
             <groupId>c3p0</groupId>

@@ -25,10 +25,11 @@ public class EmployeeController {
 
     @RequestMapping(value = "/list")
     public ModelAndView listEmployees() {
-        List<Employee> empList= employeeServiceImpl.getItems();
+        List<Employee> empList = employeeServiceImpl.getItems();
         ModelAndView model = new ModelAndView("index");
-        model.addObject("itemList",empList);
-        model.addObject("msg","welcome to spring mvc");
+        model.addObject("itemList", empList);
+        model.addObject("msg", "welcome to spring mvc");
+        logger.info("check value from database:" + empList.get(0).getItemName());
         return model;
     }
 }
